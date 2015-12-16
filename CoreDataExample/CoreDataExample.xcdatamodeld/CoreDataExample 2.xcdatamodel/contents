@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15C50" minimumToolsVersion="Automatic">
     <entity name="City" representedClassName="City" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="country" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Country" inverseName="cities" inverseEntity="Country" syncable="YES"/>
     </entity>
     <entity name="Country" representedClassName="Country" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="capital" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="countryId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nativeName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="population" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="cities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="City" inverseName="country" inverseEntity="City" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Country" positionX="-900" positionY="-711" width="128" height="118"/>
-        <element name="City" positionX="-695" positionY="-666" width="128" height="73"/>
+        <element name="City" positionX="-695" positionY="-606" width="128" height="73"/>
+        <element name="Country" positionX="-900" positionY="-711" width="128" height="178"/>
     </elements>
 </model>
