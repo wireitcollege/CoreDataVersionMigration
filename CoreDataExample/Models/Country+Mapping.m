@@ -24,7 +24,7 @@
     country.capital     = [dictionary valueForKey:@"capital"];
     country.population  = [dictionary valueForKey:@"population"];
     country.nativeName  = [dictionary valueForKey:@"nativeName"];
-    country.region      = [dictionary valueForKey:@"region"];
+    //country.region      = [dictionary valueForKey:@"region"];
     
     id area = [dictionary valueForKey:@"area"];
     if ([area isKindOfClass:[NSString class]]) {

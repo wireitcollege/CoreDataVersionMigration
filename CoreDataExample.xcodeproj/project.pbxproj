@@ -457,7 +457,7 @@
 				84EC4CFA1C1F29C300860DF9 /* CoreDataExample 2.xcdatamodel */,
 				8437AB541C1891F4008D6DD9 /* CoreDataExample.xcdatamodel */,
 			);
-			currentVersion = 84EC4CFA1C1F29C300860DF9 /* CoreDataExample 2.xcdatamodel */;
+			currentVersion = 840012381C21CF9400D29D63 /* CoreDataExample 3.xcdatamodel */;
 			name = CoreDataExample.xcdatamodeld;
 			path = ../CoreDataExample.xcdatamodeld;
 			sourceTree = "<group>";

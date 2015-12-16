@@ -42,7 +42,7 @@
     destinationCountry.longitude = sourceCountry.longitude;
     destinationCountry.capital = sourceCountry.capital;
     
-    NSString *regionName = [destinationCountry valueForKey:@"region"];
+    NSString *regionName = [sourceCountry valueForKey:@"region"];
     if (regionName) {
         NSMutableDictionary *regions = manager.userInfo[@"regions"];
         Region *region = regions[regionName];

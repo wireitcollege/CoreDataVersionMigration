@@ -73,7 +73,7 @@
     Country *country = [self.fetchedResultsController objectAtIndexPath:indexPath];
     // Configure the cell...
     cell.textLabel.text = country.name;
-    cell.detailTextLabel.text = country.region;
+    cell.detailTextLabel.text = country.region.name;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {

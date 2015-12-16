@@ -22,8 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSString *nativeName;
 @property (nullable, nonatomic, retain) NSNumber *population;
-@property (nullable, nonatomic, retain) NSString *region;
 @property (nullable, nonatomic, retain) NSSet<City *> *cities;
+@property (nullable, nonatomic, retain) Region *region;
 
 @end
 

@@ -20,7 +20,7 @@
 @dynamic name;
 @dynamic nativeName;
 @dynamic population;
-@dynamic region;
 @dynamic cities;
+@dynamic region;
 
 @end
