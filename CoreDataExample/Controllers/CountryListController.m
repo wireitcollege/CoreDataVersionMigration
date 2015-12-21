@@ -24,11 +24,23 @@
 
 - (NSFetchedResultsController *)fetchedResultsController {
     if (!_fetchedResultsController) {
-        _fetchedResultsController = [Country fetchedResultsSortedBy:@"name"
-                                                          ascending:YES
-                                                          predicate:nil
-                                                          groupedBy:nil
-                                                          inContext:[NSManagedObjectContext mainContext]];
+        
+        NSFetchRequest *request = [Country request];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"region.name" ascending:YES selector:@selector(localizedStandardCompare:)],
+                                    [NSSortDescriptor sortDescriptorWithKey:@"nativeName" ascending:YES selector:@selector(localizedStandardCompare:)]];
+        
+        NSFetchedResultsController *controller =
+        [[NSFetchedResultsController alloc] initWithFetchRequest:request
+                                            managedObjectContext:[NSManagedObjectContext mainContext]
+                                              sectionNameKeyPath:nil
+                                                       cacheName:nil];
+        NSError *error;
+        if (![controller performFetch:&error]) {
+            NSLog(@"Error: %@", error);
+        }
+        
+        
+        _fetchedResultsController = controller;
         _fetchedResultsController.delegate = self;
     }
     return _fetchedResultsController;

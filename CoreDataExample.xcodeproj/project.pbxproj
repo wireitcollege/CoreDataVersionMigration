@@ -13,6 +13,9 @@
 		840012491C21D6FD00D29D63 /* Region.m in Sources */ = {isa = PBXBuildFile; fileRef = 840012451C21D6FD00D29D63 /* Region.m */; };
 		840012601C21DC3E00D29D63 /* Country+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8400125D1C21DC3E00D29D63 /* Country+CoreDataProperties.m */; };
 		840012611C21DC3E00D29D63 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 8400125F1C21DC3E00D29D63 /* Country.m */; };
+		84062F3F1C2867F30064529C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84062F3E1C2867F30064529C /* MapViewController.m */; };
+		84062F421C28687A0064529C /* Country+Annotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84062F411C28687A0064529C /* Country+Annotation.m */; };
+		84062F451C286F120064529C /* CountryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84062F441C286F120064529C /* CountryViewController.m */; };
 		8437AB491C1891F4008D6DD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8437AB481C1891F4008D6DD9 /* main.m */; };
 		8437AB4C1C1891F4008D6DD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8437AB4B1C1891F4008D6DD9 /* AppDelegate.m */; };
 		8437AB521C1891F4008D6DD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8437AB501C1891F4008D6DD9 /* Main.storyboard */; };
@@ -46,6 +49,12 @@
 		8400125D1C21DC3E00D29D63 /* Country+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Country+CoreDataProperties.m"; sourceTree = "<group>"; };
 		8400125E1C21DC3E00D29D63 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
 		8400125F1C21DC3E00D29D63 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		84062F3D1C2867F30064529C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Controllers/MapViewController.h; sourceTree = "<group>"; };
+		84062F3E1C2867F30064529C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Controllers/MapViewController.m; sourceTree = "<group>"; };
+		84062F401C28687A0064529C /* Country+Annotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Country+Annotation.h"; sourceTree = "<group>"; };
+		84062F411C28687A0064529C /* Country+Annotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Country+Annotation.m"; sourceTree = "<group>"; };
+		84062F431C286F120064529C /* CountryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountryViewController.h; path = Controllers/CountryViewController.h; sourceTree = "<group>"; };
+		84062F441C286F120064529C /* CountryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountryViewController.m; path = Controllers/CountryViewController.m; sourceTree = "<group>"; };
 		8437AB441C1891F4008D6DD9 /* CoreDataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8437AB481C1891F4008D6DD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8437AB4A1C1891F4008D6DD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -157,6 +166,8 @@
 				8437AB531C1891F4008D6DD9 /* CoreDataExample.xcdatamodeld */,
 				84EC4D171C1F3FF800860DF9 /* Country+Mapping.h */,
 				84EC4D181C1F3FF800860DF9 /* Country+Mapping.m */,
+				84062F401C28687A0064529C /* Country+Annotation.h */,
+				84062F411C28687A0064529C /* Country+Annotation.m */,
 			);
 			name = Model;
 			path = Models;
@@ -173,6 +184,10 @@
 				8437AB7A1C19DD16008D6DD9 /* CityListController.m */,
 				8437AB861C19F553008D6DD9 /* FetchedTableViewController.h */,
 				8437AB871C19F553008D6DD9 /* FetchedTableViewController.m */,
+				84062F3D1C2867F30064529C /* MapViewController.h */,
+				84062F3E1C2867F30064529C /* MapViewController.m */,
+				84062F431C286F120064529C /* CountryViewController.h */,
+				84062F441C286F120064529C /* CountryViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -283,6 +298,7 @@
 				8437AB781C18A069008D6DD9 /* CountryListController.m in Sources */,
 				84EC4D191C1F3FF800860DF9 /* Country+Mapping.m in Sources */,
 				84EC4D111C1F2B1500860DF9 /* City+CoreDataProperties.m in Sources */,
+				84062F451C286F120064529C /* CountryViewController.m in Sources */,
 				84EC4D161C1F309700860DF9 /* CountryAPI.m in Sources */,
 				84EC4D121C1F2B1500860DF9 /* City.m in Sources */,
 				840012611C21DC3E00D29D63 /* Country.m in Sources */,
@@ -296,9 +312,11 @@
 				8437AB721C189A38008D6DD9 /* TextFieldCell.m in Sources */,
 				8437AB4C1C1891F4008D6DD9 /* AppDelegate.m in Sources */,
 				8437AB491C1891F4008D6DD9 /* main.m in Sources */,
+				84062F421C28687A0064529C /* Country+Annotation.m in Sources */,
 				8437AB851C19E560008D6DD9 /* NSManagedObject+CoreData.m in Sources */,
 				8437AB551C1891F4008D6DD9 /* CoreDataExample.xcdatamodeld in Sources */,
 				8400123A1C21D08900D29D63 /* Model2To3.xcmappingmodel in Sources */,
+				84062F3F1C2867F30064529C /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

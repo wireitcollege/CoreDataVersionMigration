@@ -115,7 +115,7 @@
                                              groupedBy:(NSString *)grouped
                                              inContext:(NSManagedObjectContext *)context
 {
-    NSFetchRequest *request = [self requestSortedBy:@"name" ascending:YES predicate:nil];
+    NSFetchRequest *request = [self requestSortedBy:@"name" ascending:YES predicate:predicate];
     NSFetchedResultsController *controller =
     [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                         managedObjectContext:context

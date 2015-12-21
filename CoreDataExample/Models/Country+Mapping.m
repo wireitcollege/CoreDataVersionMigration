@@ -8,25 +8,35 @@
 
 #import "Country+Mapping.h"
 #import "NSManagedObject+CoreData.h"
+#import "Region+CoreDataProperties.h"
 
 @implementation Country (Mapping)
 
-+ (instancetype)countryWithDictionary:(NSDictionary *)dictionary inContext:(NSManagedObjectContext *)context {
-    NSString *name = [dictionary valueForKey:@"name"];
++ (instancetype)countryWithDictionary:(NSDictionary *)json inContext:(NSManagedObjectContext *)context {
+    NSString *name = [json valueForKey:@"name"];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", name];
-    Country *country = [Country findFirstWithPredicate:predicate inContext:context];
+    NSPredicate *byCountry = [NSPredicate predicateWithFormat:@"name == %@", name];
+    Country *country = [Country findFirstWithPredicate:byCountry inContext:context];
     if (!country) {
         country = [Country createEntityInContext:context];
         country.name = name;
     }
+
+    country.capital     = [json valueForKey:@"capital"];
+    country.population  = [json valueForKey:@"population"];
+    country.nativeName  = [json valueForKey:@"nativeName"];
     
-    country.capital     = [dictionary valueForKey:@"capital"];
-    country.population  = [dictionary valueForKey:@"population"];
-    country.nativeName  = [dictionary valueForKey:@"nativeName"];
-    //country.region      = [dictionary valueForKey:@"region"];
+    NSString *regionName = [json valueForKey:@"region"];
+    NSPredicate *byRegion = [NSPredicate predicateWithFormat:@"name = %@", regionName];
+    Region *region = [Region findFirstWithPredicate:byRegion inContext:context];
+    if (!region) {
+        region = [Region createEntityInContext:context];
+        region.name = regionName;
+    }
     
-    id area = [dictionary valueForKey:@"area"];
+    country.region      = region;
+    
+    id area = [json valueForKey:@"area"];
     if ([area isKindOfClass:[NSString class]]) {
         NSNumberFormatter *formatter = [NSNumberFormatter new];
         formatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -39,7 +49,7 @@
     
     country.area        = area;
     
-    NSArray *latlng = [dictionary valueForKey:@"latlng"];
+    NSArray *latlng = [json valueForKey:@"latlng"];
     country.latitude    = latlng.firstObject;
     country.longitude   = latlng.lastObject;
     
