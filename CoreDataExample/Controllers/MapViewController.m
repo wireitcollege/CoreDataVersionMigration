@@ -7,14 +7,11 @@
 //
 
 #import "MapViewController.h"
-#import <MapKit/MapKit.h>
 #import "NSManagedObject+CoreData.h"
-#import "Country.h"
 #import "CountryViewController.h"
 
 @interface MapViewController () <MKMapViewDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (strong, nonatomic) NSArray <Country <MKAnnotation> *> *coutries;
+
 @end
 
 @implementation MapViewController
@@ -22,7 +19,6 @@
 - (void)setMapView:(MKMapView *)mapView {
     _mapView = mapView;
     _mapView.delegate = self;
-    _mapView.showsUserLocation = YES;
 }
 
 - (NSArray <Country <MKAnnotation> *> *)coutries {

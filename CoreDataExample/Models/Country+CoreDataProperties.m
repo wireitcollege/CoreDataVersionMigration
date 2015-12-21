@@ -10,6 +10,7 @@
 //
 
 #import "Country+CoreDataProperties.h"
+#import "Region+CoreDataProperties.h"
 
 @implementation Country (CoreDataProperties)
 

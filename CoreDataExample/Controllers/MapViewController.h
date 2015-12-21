@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Country.h"
+#import <MapKit/MapKit.h>
 
 @interface MapViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) NSArray <Country <MKAnnotation> *> *coutries;
 @end

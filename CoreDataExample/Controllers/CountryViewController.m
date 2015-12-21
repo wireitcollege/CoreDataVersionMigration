@@ -9,6 +9,7 @@
 #import "CountryViewController.h"
 #import "Region+CoreDataProperties.h"
 #import "CityListController.h"
+#import "CountryMapViewController.h"
 
 @interface CountryViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -27,6 +28,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [self.tabBarController.tabBar setHidden:YES];
+    
     self.title = self.country.nativeName;
     self.nameLabel.text = self.country.name;
     self.regionLabel.text = self.country.region.name;
@@ -34,13 +38,22 @@
     self.populationLabel.text = self.country.population.stringValue;
     self.capitalLabel.text = self.country.capital;
     self.citiesCountLabel.text = @(self.country.cities.count).stringValue;
+}
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.tabBarController.tabBar setHidden:NO];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.destinationViewController isKindOfClass:[CityListController class]]) {
         CityListController *cc = segue.destinationViewController;
         cc.country = self.country;
+    }
+    
+    if ([segue.destinationViewController isKindOfClass:[CountryMapViewController class]]) {
+        CountryMapViewController *cmvc = segue.destinationViewController;
+        cmvc.country = self.country;
     }
 }
 

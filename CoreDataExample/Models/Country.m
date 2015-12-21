@@ -13,5 +13,8 @@
 @implementation Country
 
 // Insert code here to add functionality to your managed object subclass
+- (NSString *)regionName {
+    return self.region.name;
+}
 
 @end

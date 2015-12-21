@@ -10,7 +10,7 @@
 #import "NSManagedObjectContext+MainContext.h"
 #import "NSManagedObject+CoreData.h"
 #import "Country+CoreDataProperties.h"
-#import "CityListController.h"
+#import "CountryViewController.h"
 #import "CountryAPI.h"
 #import "Region+CoreDataProperties.h"
 
@@ -32,7 +32,7 @@
         NSFetchedResultsController *controller =
         [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                             managedObjectContext:[NSManagedObjectContext mainContext]
-                                              sectionNameKeyPath:nil
+                                              sectionNameKeyPath:@"regionName"
                                                        cacheName:nil];
         NSError *error;
         if (![controller performFetch:&error]) {
@@ -96,6 +96,10 @@
     return UITableViewAutomaticDimension;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    id <NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
+    return [sectionInfo name];
+}
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -123,14 +127,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.destinationViewController isKindOfClass:[CityListController class]] &&
+    if ([segue.destinationViewController isKindOfClass:[CountryViewController class]] &&
         [sender isKindOfClass:[UITableViewCell class]])
     {
         UITableViewCell *cell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         Country *country = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
-        [(CityListController *)segue.destinationViewController setCountry:country];
+        [(CountryViewController *)segue.destinationViewController setCountry:country];
     }
 }
 
